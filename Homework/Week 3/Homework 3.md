@@ -1,4 +1,5 @@
 #Create an external table using the Green Taxi Trip Records Data for 2022. 
+
 CREATE OR REPLACE EXTERNAL TABLE `iconic-indexer-412617.yellow_cab_data.homework_week3`
 OPTIONS (
   format = 'parquet',
