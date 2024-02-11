@@ -42,7 +42,7 @@ Select count(*) from iconic-indexer-412617.yellow_cab_data.green_tripdata_non_pa
 Where fare_amount = 0;
 
 #Question4 - What is the best strategy to make an optimized table in Big Query if your query will always order the results by PUlocationID and filter based on lpep_pickup_datetime? (Create a new table with this strategy)
-#partition by lpep_pickup_datetime and cluster by pulocation_id
+#The solution is partitioning by lpep_pickup_datetime and cluster by pulocation_id
 
 CREATE OR REPLACE TABLE iconic-indexer-412617.yellow_cab_data.yellow_tripdata_partitoned_clustered
 PARTITION BY date_column
