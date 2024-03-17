@@ -1,5 +1,5 @@
---Question 1
---Create a materialized view to compute the average, min and max trip time between each taxi zone.
+##Question 1
+##Create a materialized view to compute the average, min and max trip time between each taxi zone.
 
 CREATE MATERIALIZED VIEW question1 AS (
 WITH taxi_zone AS (
@@ -20,8 +20,8 @@ SELECT
    GROUP BY concat(pickup_zone, '-', dropoff_zone)
 )
 
---Question 2
---Recreate the MV(s) in question 1, to also find the number of trips for the pair of taxi zones with the highest average trip time.
+##Question 2
+##Recreate the MV(s) in question 1, to also find the number of trips for the pair of taxi zones with the highest average trip time.
 
 CREATE MATERIALIZED VIEW question2 AS (
 WITH taxi_zone AS (
@@ -45,10 +45,10 @@ SELECT
    ORDER BY average DESC
    LIMIT 10
 )
---Question 3
---From the latest pickup time to 17 hours before, what are the top 3 busiest zones in terms of number of pickups? 
---For example if the latest pickup time is 2020-01-01 17:00:00,
---then the query should return the top 3 busiest zones from 2020-01-01 00:00:00 to 2020-01-01 17:00:00.
+##Question 3
+##From the latest pickup time to 17 hours before, what are the top 3 busiest zones in terms of number of pickups? 
+##For example if the latest pickup time is 2020-01-01 17:00:00,
+##then the query should return the top 3 busiest zones from 2020-01-01 00:00:00 to 2020-01-01 17:00:00.
 
 
 CREATE MATERIALIZED VIEW question3 AS (
