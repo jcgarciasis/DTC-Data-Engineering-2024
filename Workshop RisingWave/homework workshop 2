@@ -38,7 +38,7 @@ SELECT
  	AVG(duration) AS average, 
 	MIN(duration) AS min,
 	MAX(duration) AS max,
-    count(*) As n_trips,
+        count(*) As n_trips,
 	concat(pickup_zone, '-', dropoff_zone) AS zone_pair
    FROM taxi_zone
    GROUP BY concat(pickup_zone, '-', dropoff_zone)
@@ -54,11 +54,11 @@ SELECT
 CREATE MATERIALIZED VIEW question3 AS (
 SELECT 
 	taxi_zone.Zone as pickup_zone, 
-    count(*) As trips
+        count(*) As trips
 FROM trip_data
 JOIN taxi_zone ON trip_data.PULocationID = taxi_zone.location_id
 WHERE tpep_pickup_datetime >= (SELECT MAX(tpep_pickup_datetime) - INTERVAL '17 Hours' from trip_data) 
 GROUP by 
-    pickup_zone
+        pickup_zone
 ORDER BY trips DESC
 )
